@@ -13,7 +13,7 @@ class AdminCategories extends Component {
       status: 'init',
       error: null,
       showModal: false,
-      selected: false
+      selected: undefined
     };
   }
 
@@ -89,7 +89,7 @@ class AdminCategories extends Component {
           {status === 'success' && <CategoriesList items={categories} />}
         </Row>
 
-        <CategoryModal onCancel={() => this.hideModal()} show={showModal} selected={selected} />
+        <CategoryModal onCancel={() => this.hideModal()} show={showModal} category={selected} />
       </Grid>
     );
   }
